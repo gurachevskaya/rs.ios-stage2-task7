@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController">
+            <connections>
+                <outlet property="activityIndicator" destination="ez3-Rc-mFu" id="205-yb-Vxh"/>
+                <outlet property="allVideosLabel" destination="4Wr-dw-b92" id="mwB-Al-aSh"/>
+                <outlet property="tableView" destination="Imk-RU-frI" id="kwg-6b-0Uq"/>
+                <outlet property="videoSearchBar" destination="5uh-mq-xvG" id="2wi-Ni-Hh7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все видео" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wr-dw-b92">
+                    <rect key="frame" x="10" y="115" width="118" height="27.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-RU-frI">
+                    <rect key="frame" x="5" y="192.5" width="404" height="664.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="sectionIndexBackgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="No4-SM-18T"/>
+                        <outlet property="delegate" destination="-1" id="4pf-P1-gMg"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ez3-Rc-mFu">
+                    <rect key="frame" x="188.5" y="506.5" width="37" height="37"/>
+                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+                <searchBar contentMode="redraw" placeholder="Поиск" translatesAutoresizingMaskIntoConstraints="NO" id="5uh-mq-xvG">
+                    <rect key="frame" x="5" y="49" width="404" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="5uh-mq-xvG" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="5" id="5NS-3U-jhb"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Imk-RU-frI" secondAttribute="bottom" constant="5" id="6S4-3b-W9m"/>
+                <constraint firstItem="Imk-RU-frI" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="5" id="MNH-Bx-X8S"/>
+                <constraint firstItem="5uh-mq-xvG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="5" id="OZs-dM-0te"/>
+                <constraint firstItem="4Wr-dw-b92" firstAttribute="top" secondItem="5uh-mq-xvG" secondAttribute="bottom" constant="10" id="VtR-iF-6qj"/>
+                <constraint firstItem="ez3-Rc-mFu" firstAttribute="centerX" secondItem="Imk-RU-frI" secondAttribute="centerX" id="Vyi-ZD-3TT"/>
+                <constraint firstItem="Imk-RU-frI" firstAttribute="top" secondItem="4Wr-dw-b92" secondAttribute="bottom" constant="50" id="Zyv-6G-3fO"/>
+                <constraint firstItem="ez3-Rc-mFu" firstAttribute="centerY" secondItem="Imk-RU-frI" secondAttribute="centerY" id="brn-sf-zHf"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Imk-RU-frI" secondAttribute="trailing" constant="5" id="mjH-c6-4CA"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="5uh-mq-xvG" secondAttribute="trailing" constant="5" id="nhK-Ue-ZdF"/>
+                <constraint firstItem="4Wr-dw-b92" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="tWU-gk-k5u"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="82.366071428571431"/>
+        </view>
+    </objects>
+</document>

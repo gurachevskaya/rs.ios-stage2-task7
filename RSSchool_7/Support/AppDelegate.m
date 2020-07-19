@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "StartViewController.h"
+#import "FavouritesViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,10 +18,30 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    [UITabBar appearance].tintColor = [UIColor grayColor];
+    
+    UITabBarController *tabBarController = [UITabBarController new];
+    NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
+    
+    UINavigationController *firstViewController = [[UINavigationController alloc] initWithRootViewController:[StartViewController new]];
+    [firstViewController.navigationBar setHidden:YES];
+    firstViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Home"] tag:0];
+    [tabBarControllers addObject:firstViewController];
+    
+//    FavouritesViewController *secondViewController = [[FavouritesViewController alloc] initWithNibName:@"StartViewController" bundle:nil];
+    FavouritesViewController *secondViewController = [[FavouritesViewController alloc] init];
+    secondViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Star"] tag:0];
+    [tabBarControllers addObject:secondViewController];
+    
+    tabBarController.viewControllers = tabBarControllers;
+    tabBarController.customizableViewControllers = nil;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];;
     return YES;
 }
-
 
 #pragma mark - Core Data stack
 
@@ -49,7 +71,6 @@
             }];
         }
     }
-    
     return _persistentContainer;
 }
 

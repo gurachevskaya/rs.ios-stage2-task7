@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FavouritesViewController.h
 //  RSSchool_7
 //
 //  Created by Karina on 7/18/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface FavouritesViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
