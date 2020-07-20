@@ -18,7 +18,7 @@
 		9A4F231924C331A50015D244 /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F231724C331A50015D244 /* FavouritesViewController.xib */; };
 		9A4F232224C349440015D244 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232024C349440015D244 /* CustomTableViewCell.m */; };
 		9A4F232324C349440015D244 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F232124C349440015D244 /* CustomTableViewCell.xib */; };
-		9A4F232824C351180015D244 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232624C351180015D244 /* StartViewController.m */; };
+		9A4F232824C351180015D244 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232624C351180015D244 /* VideosListViewController.m */; };
 		9A4F232924C351180015D244 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F232724C351180015D244 /* StartViewController.xib */; };
 		9A4F232C24C44E460015D244 /* TedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232B24C44E460015D244 /* TedVideo.m */; };
 		9A4F232F24C450750015D244 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232E24C450750015D244 /* UserService.m */; };
@@ -55,8 +55,8 @@
 		9A4F231F24C349440015D244 /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		9A4F232024C349440015D244 /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		9A4F232124C349440015D244 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		9A4F232524C351180015D244 /* StartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
-		9A4F232624C351180015D244 /* StartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		9A4F232524C351180015D244 /* VideosListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideosListViewController.h; sourceTree = "<group>"; };
+		9A4F232624C351180015D244 /* VideosListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideosListViewController.m; sourceTree = "<group>"; };
 		9A4F232724C351180015D244 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		9A4F232A24C44E460015D244 /* TedVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedVideo.h; sourceTree = "<group>"; };
 		9A4F232B24C44E460015D244 /* TedVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TedVideo.m; sourceTree = "<group>"; };
@@ -159,8 +159,7 @@
 		9A4F231124C32E1F0015D244 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9A4F231E24C33E060015D244 /* StartViewController */,
-				9A4F231A24C331AF0015D244 /* FavouritesViewController */,
+				9A4F231E24C33E060015D244 /* VideosListViewController */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -175,14 +174,14 @@
 			path = FavouritesViewController;
 			sourceTree = "<group>";
 		};
-		9A4F231E24C33E060015D244 /* StartViewController */ = {
+		9A4F231E24C33E060015D244 /* VideosListViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9A4F232524C351180015D244 /* StartViewController.h */,
-				9A4F232624C351180015D244 /* StartViewController.m */,
+				9A4F232524C351180015D244 /* VideosListViewController.h */,
+				9A4F232624C351180015D244 /* VideosListViewController.m */,
 				9A4F232724C351180015D244 /* StartViewController.xib */,
 			);
-			path = StartViewController;
+			path = VideosListViewController;
 			sourceTree = "<group>";
 		};
 		9A4F232424C349480015D244 /* Cells */ = {
@@ -202,6 +201,7 @@
 				9A4F232E24C450750015D244 /* UserService.m */,
 				9A4F233124C46A020015D244 /* ImageDownloadOperation.h */,
 				9A4F233224C46A020015D244 /* ImageDownloadOperation.m */,
+				9A4F231A24C331AF0015D244 /* FavouritesViewController */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 				9A4F233324C46A020015D244 /* ImageDownloadOperation.m in Sources */,
 				9A4F232F24C450750015D244 /* UserService.m in Sources */,
 				9A4F22EF24C317BB0015D244 /* RSSchool_7.xcdatamodeld in Sources */,
-				9A4F232824C351180015D244 /* StartViewController.m in Sources */,
+				9A4F232824C351180015D244 /* VideosListViewController.m in Sources */,
 				9A4F232C24C44E460015D244 /* TedVideo.m in Sources */,
 				9A4F231824C331A50015D244 /* FavouritesViewController.m in Sources */,
 				9A4F230D24C32D0A0015D244 /* XMLParser.m in Sources */,

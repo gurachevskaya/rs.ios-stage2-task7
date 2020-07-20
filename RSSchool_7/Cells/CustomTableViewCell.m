@@ -11,11 +11,6 @@
 @interface CustomTableViewCell()
 
 
-@property (strong, nonatomic) IBOutlet UIImageView *videoImageView;
-@property (strong, nonatomic) IBOutlet UILabel *durationLabel;
-@property (strong, nonatomic) IBOutlet UILabel *speakerLabel;
-@property (strong, nonatomic) IBOutlet UILabel *speechNameLabel;
-
 @end
 
 @implementation CustomTableViewCell

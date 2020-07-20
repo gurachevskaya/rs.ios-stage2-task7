@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "StartViewController.h"
+#import "VideosListViewController.h"
 #import "FavouritesViewController.h"
 
 @interface AppDelegate ()
@@ -24,13 +24,15 @@
     UITabBarController *tabBarController = [UITabBarController new];
     NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
     
-    UINavigationController *firstViewController = [[UINavigationController alloc] initWithRootViewController:[StartViewController new]];
+    VideosListViewController *startVC = [[VideosListViewController alloc] initWithType:AllVideos];
+    UINavigationController *firstViewController = [[UINavigationController alloc] initWithRootViewController:startVC];
     [firstViewController.navigationBar setHidden:YES];
     firstViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Home"] tag:0];
     [tabBarControllers addObject:firstViewController];
     
-//    FavouritesViewController *secondViewController = [[FavouritesViewController alloc] initWithNibName:@"StartViewController" bundle:nil];
-    FavouritesViewController *secondViewController = [[FavouritesViewController alloc] init];
+    VideosListViewController *favouritesVC = [[VideosListViewController alloc] initWithType:FavouriteVideos];
+    UINavigationController *secondViewController = [[UINavigationController alloc] initWithRootViewController:favouritesVC];
+    [secondViewController.navigationBar setHidden:YES];
     secondViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Star"] tag:0];
     [tabBarControllers addObject:secondViewController];
     

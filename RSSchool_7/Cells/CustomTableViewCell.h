@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CustomTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *videoImageView;
+@property (strong, nonatomic) IBOutlet UILabel *durationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *speakerLabel;
+@property (strong, nonatomic) IBOutlet UILabel *speechNameLabel;
 
 - (void)configureWithItem:(TedVideo *)video;
 
