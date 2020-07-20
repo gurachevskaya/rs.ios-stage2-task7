@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "VideosListViewController.h"
-#import "FavouritesViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    [UINavigationBar appearance].tintColor = [UIColor grayColor];
 //    [UITabBar appearance].tintColor = [UIColor grayColor];
     
     UITabBarController *tabBarController = [UITabBarController new];
@@ -26,13 +27,11 @@
     
     VideosListViewController *startVC = [[VideosListViewController alloc] initWithType:AllVideos];
     UINavigationController *firstViewController = [[UINavigationController alloc] initWithRootViewController:startVC];
-    [firstViewController.navigationBar setHidden:YES];
     firstViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Home"] tag:0];
     [tabBarControllers addObject:firstViewController];
     
     VideosListViewController *favouritesVC = [[VideosListViewController alloc] initWithType:FavouriteVideos];
     UINavigationController *secondViewController = [[UINavigationController alloc] initWithRootViewController:favouritesVC];
-    [secondViewController.navigationBar setHidden:YES];
     secondViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Star"] tag:0];
     [tabBarControllers addObject:secondViewController];
     

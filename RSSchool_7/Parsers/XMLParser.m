@@ -51,6 +51,8 @@
         self.parsingString = [NSMutableString new];
     } else if ([elementName isEqualToString:@"media:credit"]) {
         self.parsingString = [NSMutableString new];
+    } else if ([elementName isEqualToString:@"description"]) {
+    self.parsingString = [NSMutableString new];
     }
 }
 
@@ -63,17 +65,20 @@
         if ([elementName isEqualToString:@"title"]) {
             NSInteger index = [self.parsingString rangeOfString:@"|"].location;
             if (index <= self.parsingString.length) {
-            self.parsingString = [[self.parsingString substringToIndex:index] mutableCopy];
+                self.parsingString = [[self.parsingString substringToIndex:index] mutableCopy];
             }
         } else if ([elementName isEqualToString:@"itunes:duration"]) {
             if ([self.parsingString characterAtIndex:0] == '0' && [self.parsingString characterAtIndex:1] == '0') {
                 self.parsingString = [[self.parsingString substringFromIndex:3] mutableCopy];
             }
         }
+        if ([self.videoDictionary objectForKey:elementName] != nil) {
+            self.parsingString = [[self.parsingString stringByAppendingFormat:@" & %@", [self.videoDictionary objectForKey:elementName]] mutableCopy];
+        }
         [self.videoDictionary setObject:self.parsingString forKey:elementName];
         self.parsingString = nil;
     }
-
+    
     if ([elementName isEqualToString:@"item"]) {
         TedVideo *video = [[TedVideo alloc] initWithDictionary:self.videoDictionary];
         self.videoDictionary = nil;

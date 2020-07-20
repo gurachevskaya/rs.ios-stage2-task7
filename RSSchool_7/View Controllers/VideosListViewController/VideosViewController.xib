@@ -29,7 +29,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-RU-frI">
-                    <rect key="frame" x="5" y="192.5" width="404" height="664.5"/>
+                    <rect key="frame" x="5" y="162.5" width="404" height="694.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="sectionIndexBackgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
@@ -38,10 +38,10 @@
                     </connections>
                 </tableView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ez3-Rc-mFu">
-                    <rect key="frame" x="188.5" y="506.5" width="37" height="37"/>
+                    <rect key="frame" x="188.5" y="491.5" width="37" height="37"/>
                     <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
-                <searchBar contentMode="redraw" placeholder="Поиск" translatesAutoresizingMaskIntoConstraints="NO" id="5uh-mq-xvG">
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Поиск" translatesAutoresizingMaskIntoConstraints="NO" id="5uh-mq-xvG">
                     <rect key="frame" x="5" y="49" width="404" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
@@ -54,7 +54,7 @@
                 <constraint firstItem="5uh-mq-xvG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="5" id="OZs-dM-0te"/>
                 <constraint firstItem="4Wr-dw-b92" firstAttribute="top" secondItem="5uh-mq-xvG" secondAttribute="bottom" constant="10" id="VtR-iF-6qj"/>
                 <constraint firstItem="ez3-Rc-mFu" firstAttribute="centerX" secondItem="Imk-RU-frI" secondAttribute="centerX" id="Vyi-ZD-3TT"/>
-                <constraint firstItem="Imk-RU-frI" firstAttribute="top" secondItem="4Wr-dw-b92" secondAttribute="bottom" constant="50" id="Zyv-6G-3fO"/>
+                <constraint firstItem="Imk-RU-frI" firstAttribute="top" secondItem="4Wr-dw-b92" secondAttribute="bottom" constant="20" id="Zyv-6G-3fO"/>
                 <constraint firstItem="ez3-Rc-mFu" firstAttribute="centerY" secondItem="Imk-RU-frI" secondAttribute="centerY" id="brn-sf-zHf"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Imk-RU-frI" secondAttribute="trailing" constant="5" id="mjH-c6-4CA"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="5uh-mq-xvG" secondAttribute="trailing" constant="5" id="nhK-Ue-ZdF"/>

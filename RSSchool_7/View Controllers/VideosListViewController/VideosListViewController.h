@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ViewControllerType) {
 };
 
 @protocol VideosLoadingProtocol
-@required
+
 - (void)startLoading;
 
 @end

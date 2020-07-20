@@ -10,6 +10,8 @@
 #import "CustomTableViewCell.h"
 #import "UserService.h"
 #import "XMLParser.h"
+#import <CoreData/CoreData.h>
+#import "DetailedInfoViewController.h"
 
 @interface VideosListViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -29,6 +31,8 @@
 
 @interface FavouriteVideosListViewController : VideosListViewController
 
+@property (nonatomic) NSFetchedResultsController *frc;
+
 @end
 
 @implementation VideosListViewController
@@ -39,13 +43,12 @@
                 format:@"You have not implemented %@ in %@", NSStringFromSelector(_cmd), NSStringFromClass([self class])];
 }
 
-- (instancetype)initWithType:(ViewControllerType)type
-{
+- (instancetype)initWithType:(ViewControllerType)type {
     self = nil;
     if (type == AllVideos) {
-        self = [[AllVideosListViewController alloc] initWithNibName:@"StartViewController" bundle:nil];
+        self = [[AllVideosListViewController alloc] initWithNibName:@"VideosViewController" bundle:nil];
     } else if (type == FavouriteVideos) {
-        self = [[FavouriteVideosListViewController alloc] initWithNibName:@"StartViewController" bundle:nil];
+        self = [[FavouriteVideosListViewController alloc] initWithNibName:@"VideosViewController" bundle:nil];
     }
     return self;
 }
@@ -56,15 +59,16 @@
     //Networking
     self.userService = [[UserService alloc] initWithParser:[XMLParser new]];
     
+    
     self.dataSource = [NSArray new];
     self.videoSearchBar.delegate = self;
 
     self.tableView.rowHeight = 150;
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"CustomCell"];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                          action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+//                                                                          action:@selector(dismissKeyboard)];
+//    [self.view addGestureRecognizer:tap];
     
     [self configureActivityIndicator];
 }
@@ -72,6 +76,8 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
     [self startLoading];
 }
 
@@ -81,7 +87,9 @@
     [self.userService loadImageForURL:video.imageUrl completion:^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.dataSource[indexPath.row].image = image;
-            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            
+//            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [weakSelf.tableView reloadData];
         });
     }];
 }
@@ -96,7 +104,6 @@
            [self loadImageForIndexPath:indexPath];
        }
        [cell configureWithItem:video];
-
     return cell;
 }
 
@@ -109,6 +116,15 @@
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     TedVideo *video = self.dataSource[indexPath.row];
     [self.userService cancelDownloadingForUrl:video.imageUrl];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    TedVideo *video = self.dataSource[indexPath.row];
+    DetailedInfoViewController *vc = [[DetailedInfoViewController alloc] initWithNibName:@"DetailedInfoViewController" bundle:[NSBundle mainBundle] video:video];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 #pragma mark - UI Setup
@@ -127,9 +143,9 @@
     [self.view endEditing:true];
 }
 
-- (void)dismissKeyboard {
-    [self.videoSearchBar resignFirstResponder];
-}
+//- (void)dismissKeyboard {
+//    [self.videoSearchBar resignFirstResponder];
+//}
 
 @end
 

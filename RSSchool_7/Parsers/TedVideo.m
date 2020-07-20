@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         _title = dictionary[@"title"];
+        _info = dictionary[@"description"];
         _speaker = dictionary[@"media:credit"];
         _imageUrl = dictionary[@"itunes:image"];
         _duration = dictionary[@"itunes:duration"];

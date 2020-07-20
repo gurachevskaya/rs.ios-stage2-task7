@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TedVideo : NSObject
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *info;
 @property (nonatomic, copy) NSString *speaker;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *duration;
