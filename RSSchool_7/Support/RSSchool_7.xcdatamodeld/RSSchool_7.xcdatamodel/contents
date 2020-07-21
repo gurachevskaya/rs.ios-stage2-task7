@@ -3,10 +3,11 @@
     <entity name="Video" representedClassName="Video" syncable="YES">
         <attribute name="duration" optional="YES" attributeType="String"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="speaker" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Video" positionX="-8411.52734375" positionY="-18499.94140625" width="128" height="103"/>
+        <element name="Video" positionX="-8514.3046875" positionY="-18504.203125" width="128" height="118"/>
     </elements>
 </model>

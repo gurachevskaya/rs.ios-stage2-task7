@@ -16,10 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Video *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *duration;
-@property (nullable, nonatomic, copy) NSString *speaker;
 @property (nullable, nonatomic, copy) NSString *imageUrl;
+@property (nullable, nonatomic, copy) NSString *info;
+@property (nullable, nonatomic, copy) NSString *speaker;
+@property (nullable, nonatomic, copy) NSString *title;
 
 @end
 

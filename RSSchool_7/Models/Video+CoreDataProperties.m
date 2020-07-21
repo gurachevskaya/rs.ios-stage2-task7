@@ -12,12 +12,15 @@
 @implementation Video (CoreDataProperties)
 
 + (NSFetchRequest<Video *> *)fetchRequest {
-	return [NSFetchRequest fetchRequestWithEntityName:@"Video"];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Video"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
+    return request;
 }
 
-@dynamic title;
 @dynamic duration;
-@dynamic speaker;
 @dynamic imageUrl;
+@dynamic info;
+@dynamic speaker;
+@dynamic title;
 
 @end

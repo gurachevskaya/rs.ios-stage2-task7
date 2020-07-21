@@ -12,6 +12,8 @@
 #import "XMLParser.h"
 #import <CoreData/CoreData.h>
 #import "DetailedInfoViewController.h"
+#import "DataManager.h"
+#import "Video+CoreDataProperties.h"
 
 @interface VideosListViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -29,8 +31,9 @@
 
 @end
 
-@interface FavouriteVideosListViewController : VideosListViewController
+@interface FavouriteVideosListViewController : VideosListViewController <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic, strong) DataManager *dataManager;
 @property (nonatomic) NSFetchedResultsController *frc;
 
 @end
@@ -59,30 +62,35 @@
     //Networking
     self.userService = [[UserService alloc] initWithParser:[XMLParser new]];
     
-    
     self.dataSource = [NSArray new];
     self.videoSearchBar.delegate = self;
 
     self.tableView.rowHeight = 150;
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"CustomCell"];
-    
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
-//                                                                          action:@selector(dismissKeyboard)];
-//    [self.view addGestureRecognizer:tap];
-    
+//    [self startLoading];
+
     [self configureActivityIndicator];
+
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    [self.tableView reloadData];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self startLoading];
+
+
 }
 
 - (void)loadImageForIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self) weakSelf = self;
+    
+    [self.activityIndicator startAnimating];
     TedVideo *video = self.dataSource[indexPath.row];
     [self.userService loadImageForURL:video.imageUrl completion:^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -90,6 +98,7 @@
             
 //            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             [weakSelf.tableView reloadData];
+            [self.activityIndicator stopAnimating];
         });
     }];
 }
@@ -143,9 +152,6 @@
     [self.view endEditing:true];
 }
 
-//- (void)dismissKeyboard {
-//    [self.videoSearchBar resignFirstResponder];
-//}
 
 @end
 
@@ -179,19 +185,29 @@
 @implementation FavouriteVideosListViewController
 
 - (void)startLoading {
+    
+    self.dataManager = [DataManager sharedManager];
+    NSManagedObjectContext *context = [self.dataManager newBackgroundContext];
+    
+    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:[Video fetchRequest] managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    self.frc.delegate = self;
+    [self.frc performFetch:nil];
+   
+    
     NSMutableArray *videos = [NSMutableArray array];
-    for (int i = 0; i < 10; i++) {
-        TedVideo *video = [TedVideo new];
-        video.duration = @"00.25";
-        video.imageUrl = @"https://ichef.bbci.co.uk/news/320/cpsprodpb/AAE7/production/_111515734_gettyimages-1208779325.jpg";
-        NSString *title = [NSString stringWithFormat:@"title %d", i];
-        video.title = title;
-        NSString *speaker = [NSString stringWithFormat:@"speaker %d", i];
-        video.speaker = speaker;
-        [videos addObject:video];
+    NSArray *array = [context executeFetchRequest:[Video fetchRequest] error:nil];
+    for (Video *video in array) {
+        TedVideo *tedVideo = [TedVideo new];
+        tedVideo.duration = video.duration;
+        tedVideo.imageUrl = video.imageUrl;
+        tedVideo.info = video.info;
+        tedVideo.speaker = video.speaker;
+        tedVideo.title = video.title;
+        [videos addObject:tedVideo];
     }
     self.dataSource = videos;
     [self.tableView reloadData];
 }
+
 
 @end
