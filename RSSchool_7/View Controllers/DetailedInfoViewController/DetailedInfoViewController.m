@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "DataManager.h"
 #import "Video+CoreDataProperties.h"
+#import <AVKit/AVKit.h>
 
 
 @interface DetailedInfoViewController () <NSFetchedResultsControllerDelegate>
@@ -20,11 +21,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
-@property (nonatomic) BOOL isFavourite;
 
+@property (nonatomic) BOOL isFavourite;
 @property (strong, nonatomic) TedVideo *video;
 @property (strong, nonatomic) Video *dataVideo;
-
+@property (strong, nonatomic) AVPlayer *player;
 @property (strong, nonatomic) DataManager *dataManager;
 
 @end
@@ -50,39 +51,43 @@
                                                                   target:self.navigationController
                                                                   action:@selector(popViewControllerAnimated:)];
     self.navigationItem.leftBarButtonItem = backButton;
-    
-    self.heartButton.tintColor = [UIColor grayColor];
-    
+        
     self.durationLabel.text = self.video.duration;
     self.speakerLabel.text = self.video.speaker;
     self.videoNameLabel.text = self.video.title;
     self.informationLabel.text = self.video.info;
-    NSLog(@"%@", NSStringFromCGSize(self.video.image.size));
     self.videoImageView.image = self.video.image;
+
+    float aspectRatio = self.videoImageView.image.size.height/self.videoImageView.image.size.width;
+    [self.videoImageView.heightAnchor constraintEqualToAnchor:self.videoImageView.widthAnchor multiplier:aspectRatio].active = YES;
     
-    self.dataManager = [DataManager sharedManager];
-//    [self.dataManager viewContext].automaticallyMergesChangesFromParent = YES;
-    NSManagedObjectContext *context = [self.dataManager newBackgroundContext];
-    
-    [self.heartButton setImage:[UIImage imageNamed:@"heart"] forState:UIControlStateNormal];
     self.isFavourite = NO;
+
+    self.dataManager = [DataManager sharedManager];
+    NSManagedObjectContext *context = [self.dataManager newBackgroundContext];
     NSFetchRequest *request = [Video fetchRequest];
     request.predicate = [NSPredicate predicateWithFormat:@"info == %@", self.video.info];
     NSArray *array = [context executeFetchRequest:request error:nil];
-    
-//    for (Video *video in array) {
-//        if ([video.info isEqualToString:self.video.info]) {
-//            self.isFavourite = YES;
-//            [self.heartButton setImage:[UIImage imageNamed:@"heart.fill"] forState:UIControlStateNormal];
-//            return;
-//        }
-//    }
     if (array.count) {
         self.isFavourite = YES;
-        [self.heartButton setImage:[UIImage imageNamed:@"heart.fill"] forState:UIControlStateNormal];
     }
 }
+
+#pragma mark - Actions
  
+- (IBAction)playButtonTapped:(id)sender {
+    AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
+    AVAsset *asset = [AVAsset assetWithURL:[NSURL URLWithString:self.video.downloadLink]];
+
+    AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
+    
+    self.player = [AVPlayer playerWithPlayerItem:playerItem];
+    playerViewController.player = self.player;
+    [self presentViewController:playerViewController animated:YES completion:^{
+        [playerViewController.player play];
+    }];
+}
+
 
 - (IBAction)heartTapped:(id)sender {
   
@@ -97,26 +102,51 @@
             self.dataVideo.info = self.video.info;
             self.dataVideo.speaker = self.video.speaker;
             self.dataVideo.title = self.video.title;
+            self.dataVideo.link = self.video.link;
             [context save:nil];
         }];
-        NSLog(@"%ld", [context countForFetchRequest:[Video fetchRequest] error:nil]);
-        [self.heartButton setImage:[UIImage imageNamed:@"heart.fill"] forState:UIControlStateNormal];
+
     } else {
         NSFetchRequest *request = [Video fetchRequest];
         request.predicate = [NSPredicate predicateWithFormat:@"info == %@", self.video.info];
         NSArray *array = [context executeFetchRequest:request error:nil];
-//        for (Video *video in array) {
-//            if ([video.info isEqualToString:self.video.info]) {
-//                [context deleteObject:video];
-//            }
-//        }
         [context deleteObject:[array objectAtIndex:0]];
-
         [context save:nil];
-        NSLog(@"%ld", [context countForFetchRequest:[Video fetchRequest] error:nil]);
-        [self.heartButton setImage:[UIImage imageNamed:@"heart"] forState:UIControlStateNormal];
     }
 }
+
+
+- (IBAction)shareButtonTapped:(id)sender {
+    UIActivityViewController *activityVC;
+    activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.video.link] applicationActivities:nil];
+    UIDevice *device = [[UIDevice alloc] init];
+    //if iPad
+    if ( !(device.userInterfaceIdiom == UIUserInterfaceIdiomPhone)) {
+        if ([sender isKindOfClass:[UIView class]]) {
+            activityVC.popoverPresentationController.sourceView = [sender superview];
+            activityVC.popoverPresentationController.sourceRect = [sender frame];
+        }
+    }
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
+
+- (void)setIsFavourite:(BOOL)isFavourite {
+    _isFavourite = isFavourite;
+    if (isFavourite) {
+        [self.heartButton setImage:[UIImage imageNamed:@"heart.fill"] forState:UIControlStateNormal];
+        self.heartButton.tintColor = [UIColor blackColor];
+        if (@available(iOS 12.0, *)) {
+            if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                self.heartButton.tintColor = [UIColor whiteColor];
+            }
+        }
+    } else {
+        [self.heartButton setImage:[UIImage imageNamed:@"heart"] forState:UIControlStateNormal];
+        self.heartButton.tintColor = [UIColor grayColor];
+    }
+}
+
 
 
 @end

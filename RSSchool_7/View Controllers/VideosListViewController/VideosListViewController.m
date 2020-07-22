@@ -23,6 +23,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UserService *userService;
 @property (copy, nonatomic) NSArray<TedVideo *> *dataSource;
+
+@property (strong, nonatomic) NSMutableArray<TedVideo *> *videosArray;
+@property (strong, nonatomic) NSMutableArray<TedVideo *> *searchResultArray;
+@property (nonatomic) BOOL isFiltered;
+@property (copy, nonatomic) NSString *searchText;
+
 @property (nonatomic) ViewControllerType type;
 
 @end
@@ -31,17 +37,16 @@
 
 @end
 
-@interface FavouriteVideosListViewController : VideosListViewController <NSFetchedResultsControllerDelegate>
+@interface FavouriteVideosListViewController : VideosListViewController
 
 @property (nonatomic, strong) DataManager *dataManager;
-@property (nonatomic) NSFetchedResultsController *frc;
 
 @end
 
 @implementation VideosListViewController
 
 //Ensuring below that the startLoading and cellForRowAtIndexPath method must be implemented by the private subclasses
-- (void)startLoading{
+- (void)startLoading {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You have not implemented %@ in %@", NSStringFromSelector(_cmd), NSStringFromClass([self class])];
 }
@@ -59,11 +64,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Networking
     self.userService = [[UserService alloc] initWithParser:[XMLParser new]];
-    
     self.dataSource = [NSArray new];
     self.videoSearchBar.delegate = self;
+    self.isFiltered = NO;
 
     self.tableView.rowHeight = 150;
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"CustomCell"];
@@ -82,21 +86,21 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+  
     [self startLoading];
-
-
 }
 
 - (void)loadImageForIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self) weakSelf = self;
     
     [self.activityIndicator startAnimating];
-    TedVideo *video = self.dataSource[indexPath.row];
+    TedVideo *video = [TedVideo new];
+ 
+    video = self.dataSource[indexPath.row];
     [self.userService loadImageForURL:video.imageUrl completion:^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.dataSource[indexPath.row].image = image;
-            
-//            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                weakSelf.dataSource[indexPath.row].image = image;
+            //            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             [weakSelf.tableView reloadData];
             [self.activityIndicator stopAnimating];
         });
@@ -107,16 +111,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
-
+  
     TedVideo *video = self.dataSource[indexPath.row];
-    if (!video.image) {
-           [self loadImageForIndexPath:indexPath];
-       }
-       [cell configureWithItem:video];
+    if (!video.image && !self.isFiltered) {
+        [self loadImageForIndexPath:indexPath];
+    } else if (!video.image && self.isFiltered) {
+        for (TedVideo *tedVideo in self.videosArray) {
+            if ([video.imageUrl isEqualToString:tedVideo.imageUrl]) {
+                [self.userService loadImageForURL:tedVideo.imageUrl completion:^(UIImage *image) {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                             video.image = image;
+                      });
+                  }];
+            }
+        }
+    }
+
+    [cell configureWithItem:video];
+    
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.isFiltered) {
+        self.dataSource = self.searchResultArray;
+    } else {
+        self.dataSource = self.videosArray;
+    }
     return self.dataSource.count;
 }
 
@@ -133,7 +154,6 @@
     DetailedInfoViewController *vc = [[DetailedInfoViewController alloc] initWithNibName:@"DetailedInfoViewController" bundle:[NSBundle mainBundle] video:video];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-
 }
 
 #pragma mark - UI Setup
@@ -146,12 +166,45 @@
     }
 }
 
-#pragma mark - Keyboard
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self.view endEditing:true];
+#pragma mark - SearchBar Delegate Methods
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length == 0) {
+        self.isFiltered = NO;
+        self.dataSource = self.videosArray;
+    } else {
+        searchBar.showsCancelButton = YES;
+        self.isFiltered = YES;
+        self.dataSource = self.videosArray;
+        self.searchResultArray = [NSMutableArray array];
+        for (TedVideo *video in self.dataSource) {
+            NSRange titleRange = [video.title rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange speakerRange = [video.speaker rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (titleRange.location != NSNotFound || speakerRange.location != NSNotFound) {
+                [self.searchResultArray addObject:video];
+            }
+        }
+        self.dataSource = self.searchResultArray;
+    }
+    if (self.dataSource) {
+        [self.tableView reloadData];
+    } else {
+        self.dataSource = self.videosArray;
+        return;
+    }
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    searchBar.text = nil;
+    self.isFiltered = NO;
+    [self.tableView reloadData];
+}
 
 @end
 
@@ -159,7 +212,6 @@
 @implementation AllVideosListViewController 
 
 - (void)startLoading {
-    
     __weak typeof(self) weakSelf = self;
     [self.activityIndicator startAnimating];
     [self.userService loadVideos:^(NSArray<TedVideo *> *videos, NSError *error) {
@@ -171,7 +223,9 @@
                 [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
                 [weakSelf presentViewController:alertController animated:YES completion:nil];
             } else {
-                weakSelf.dataSource = videos;
+//                weakSelf.searchResultDataSource = [videos mutableCopy];
+                weakSelf.videosArray = [videos mutableCopy];
+                weakSelf.dataSource = weakSelf.videosArray;
                 [weakSelf.tableView reloadData];
             }
             [weakSelf.activityIndicator stopAnimating];
@@ -189,12 +243,7 @@
     self.dataManager = [DataManager sharedManager];
     NSManagedObjectContext *context = [self.dataManager newBackgroundContext];
     
-    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:[Video fetchRequest] managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
-    self.frc.delegate = self;
-    [self.frc performFetch:nil];
-   
-    
-    NSMutableArray *videos = [NSMutableArray array];
+    self.videosArray = [NSMutableArray array];
     NSArray *array = [context executeFetchRequest:[Video fetchRequest] error:nil];
     for (Video *video in array) {
         TedVideo *tedVideo = [TedVideo new];
@@ -203,10 +252,19 @@
         tedVideo.info = video.info;
         tedVideo.speaker = video.speaker;
         tedVideo.title = video.title;
-        [videos addObject:tedVideo];
+        tedVideo.link = video.link;
+        tedVideo.downloadLink = video.downloadLink;
+        [self.videosArray addObject:tedVideo];
     }
-    self.dataSource = videos;
+//    self.dataSource = self.videosArray;
     [self.tableView reloadData];
+}
+
+#pragma mark - Table View delegate
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    TedVideo *video = self.dataSource[indexPath.row];
+    [self.userService cancelDownloadingForUrl:video.imageUrl];
 }
 
 

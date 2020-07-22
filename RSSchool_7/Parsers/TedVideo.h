@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *speaker;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *duration;
+@property (nonatomic, copy) NSString *link;
+@property (nonatomic, copy) NSString *downloadLink;
 
 @property (nonatomic, strong) UIImage *image;
 

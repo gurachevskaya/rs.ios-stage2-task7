@@ -2,7 +2,7 @@
 //  Video+CoreDataProperties.m
 //  RSSchool_7
 //
-//  Created by Karina on 7/20/20.
+//  Created by Karina on 7/21/20.
 //  Copyright © 2020 Karina. All rights reserved.
 //
 //
@@ -12,7 +12,7 @@
 @implementation Video (CoreDataProperties)
 
 + (NSFetchRequest<Video *> *)fetchRequest {
-	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Video"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Video"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
     return request;
 }
@@ -22,5 +22,7 @@
 @dynamic info;
 @dynamic speaker;
 @dynamic title;
+@dynamic link;
+@dynamic downloadLink;
 
 @end

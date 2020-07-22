@@ -34,40 +34,7 @@
 }
 
 
-//#pragma mark - Fetched Results Controller Delegate
-//
-//- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(nullable NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(nullable NSIndexPath *)newIndexPath {
-//
-//    switch (type) {
-//        case NSFetchedResultsChangeInsert:
-//            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//
-//        case NSFetchedResultsChangeDelete:
-//            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//
-//        case NSFetchedResultsChangeUpdate:
-//            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//
-//        default:
-//            break;
-//    }
-//
-//}
-//
-//- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-//    // not needed
-//}
-//
-//- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-//    [self.tableView beginUpdates];
-//}
-//
-//- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-//    [self.tableView endUpdates];
-//}
+
 #pragma mark - Core Data stack
 
 @synthesize persistentContainer = _persistentContainer;

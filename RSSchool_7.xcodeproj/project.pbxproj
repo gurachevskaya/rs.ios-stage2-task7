@@ -10,8 +10,8 @@
 		9A1645D724C5BB8B00E21B3C /* DetailedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645D524C5BB8B00E21B3C /* DetailedInfoViewController.m */; };
 		9A1645D824C5BB8B00E21B3C /* DetailedInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1645D624C5BB8B00E21B3C /* DetailedInfoViewController.xib */; };
 		9A1645DC24C6247E00E21B3C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645DB24C6247E00E21B3C /* DataManager.m */; };
-		9A1645E124C6260A00E21B3C /* Video+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645DF24C6260A00E21B3C /* Video+CoreDataClass.m */; };
-		9A1645E224C6260A00E21B3C /* Video+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645E024C6260A00E21B3C /* Video+CoreDataProperties.m */; };
+		9A1645E724C710E600E21B3C /* Video+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645E524C710E600E21B3C /* Video+CoreDataClass.m */; };
+		9A1645E824C710E600E21B3C /* Video+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645E624C710E600E21B3C /* Video+CoreDataProperties.m */; };
 		9A4F22E324C317BB0015D244 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F22E224C317BB0015D244 /* AppDelegate.m */; };
 		9A4F22EF24C317BB0015D244 /* RSSchool_7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F22ED24C317BB0015D244 /* RSSchool_7.xcdatamodeld */; };
 		9A4F22F124C317BF0015D244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F22F024C317BF0015D244 /* Assets.xcassets */; };
@@ -44,10 +44,10 @@
 		9A1645D624C5BB8B00E21B3C /* DetailedInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedInfoViewController.xib; sourceTree = "<group>"; };
 		9A1645DA24C6247E00E21B3C /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		9A1645DB24C6247E00E21B3C /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		9A1645DD24C6260A00E21B3C /* Video+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Video+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9A1645DE24C6260A00E21B3C /* Video+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Video+CoreDataClass.h"; sourceTree = "<group>"; };
-		9A1645DF24C6260A00E21B3C /* Video+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Video+CoreDataClass.m"; sourceTree = "<group>"; };
-		9A1645E024C6260A00E21B3C /* Video+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Video+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9A1645E324C710E600E21B3C /* Video+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Video+CoreDataProperties.h"; path = "../../Video+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9A1645E424C710E600E21B3C /* Video+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Video+CoreDataClass.h"; path = "../../Video+CoreDataClass.h"; sourceTree = "<group>"; };
+		9A1645E524C710E600E21B3C /* Video+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Video+CoreDataClass.m"; path = "../../Video+CoreDataClass.m"; sourceTree = "<group>"; };
+		9A1645E624C710E600E21B3C /* Video+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Video+CoreDataProperties.m"; path = "../../Video+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9A4F22DE24C317BB0015D244 /* RSSchool_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSchool_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4F22E124C317BB0015D244 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A4F22E224C317BB0015D244 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,10 +171,10 @@
 		9A4F231024C32DDE0015D244 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9A1645DD24C6260A00E21B3C /* Video+CoreDataProperties.h */,
-				9A1645DE24C6260A00E21B3C /* Video+CoreDataClass.h */,
-				9A1645DF24C6260A00E21B3C /* Video+CoreDataClass.m */,
-				9A1645E024C6260A00E21B3C /* Video+CoreDataProperties.m */,
+				9A1645E324C710E600E21B3C /* Video+CoreDataProperties.h */,
+				9A1645E424C710E600E21B3C /* Video+CoreDataClass.h */,
+				9A1645E524C710E600E21B3C /* Video+CoreDataClass.m */,
+				9A1645E624C710E600E21B3C /* Video+CoreDataProperties.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1645E824C710E600E21B3C /* Video+CoreDataProperties.m in Sources */,
 				9A4F22F724C317BF0015D244 /* main.m in Sources */,
 				9A1645D724C5BB8B00E21B3C /* DetailedInfoViewController.m in Sources */,
 				9A4F232224C349440015D244 /* CustomTableViewCell.m in Sources */,
@@ -330,9 +331,8 @@
 				9A4F233324C46A020015D244 /* ImageDownloadOperation.m in Sources */,
 				9A1645DC24C6247E00E21B3C /* DataManager.m in Sources */,
 				9A4F232F24C450750015D244 /* UserService.m in Sources */,
-				9A1645E124C6260A00E21B3C /* Video+CoreDataClass.m in Sources */,
 				9A4F22EF24C317BB0015D244 /* RSSchool_7.xcdatamodeld in Sources */,
-				9A1645E224C6260A00E21B3C /* Video+CoreDataProperties.m in Sources */,
+				9A1645E724C710E600E21B3C /* Video+CoreDataClass.m in Sources */,
 				9A4F232824C351180015D244 /* VideosListViewController.m in Sources */,
 				9A4F232C24C44E460015D244 /* TedVideo.m in Sources */,
 				9A4F230D24C32D0A0015D244 /* XMLParser.m in Sources */,

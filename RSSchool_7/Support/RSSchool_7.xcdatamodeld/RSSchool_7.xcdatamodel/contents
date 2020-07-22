@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Video" representedClassName="Video" syncable="YES">
+        <attribute name="downloadLink" optional="YES" attributeType="String"/>
         <attribute name="duration" optional="YES" attributeType="String"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
         <attribute name="info" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
         <attribute name="speaker" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Video" positionX="-8514.3046875" positionY="-18504.203125" width="128" height="118"/>
+        <element name="Video" positionX="-8514.3046875" positionY="-18504.203125" width="128" height="148"/>
     </elements>
 </model>

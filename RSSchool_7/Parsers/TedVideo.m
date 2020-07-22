@@ -18,6 +18,8 @@
         _speaker = dictionary[@"media:credit"];
         _imageUrl = dictionary[@"itunes:image"];
         _duration = dictionary[@"itunes:duration"];
+        _link = dictionary[@"link"];
+        _downloadLink = dictionary[@"media:content"];
     }
     return self;
 }

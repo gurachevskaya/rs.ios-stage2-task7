@@ -10,22 +10,22 @@
 
 @interface CustomTableViewCell()
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
 @end
 
 @implementation CustomTableViewCell
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
 
 - (void)configureWithItem:(TedVideo *)video {
     self.durationLabel.text = video.duration;
     self.speakerLabel.text = video.speaker;
     self.speechNameLabel.text = video.title;
     self.videoImageView.image = video.image;
+    
+//    float aspectRatio = video.image.size.height / video.image.size.width;
+//
+//    [self.videoImageView.heightAnchor constraintEqualToAnchor:self.videoImageView.widthAnchor multiplier:aspectRatio].active = YES;
+
 }
 
 @end

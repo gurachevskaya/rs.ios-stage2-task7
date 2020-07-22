@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "TedVideo.h"
+#import "tedVideo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

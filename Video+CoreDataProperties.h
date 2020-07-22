@@ -2,7 +2,7 @@
 //  Video+CoreDataProperties.h
 //  RSSchool_7
 //
-//  Created by Karina on 7/20/20.
+//  Created by Karina on 7/21/20.
 //  Copyright © 2020 Karina. All rights reserved.
 //
 //
@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *info;
 @property (nullable, nonatomic, copy) NSString *speaker;
 @property (nullable, nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, copy) NSString *link;
+@property (nullable, nonatomic, copy) NSString *downloadLink;
+
 
 @end
 
