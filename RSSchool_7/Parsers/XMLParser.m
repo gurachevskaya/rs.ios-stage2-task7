@@ -55,7 +55,7 @@
     self.parsingString = [NSMutableString new];
     } else if ([elementName isEqualToString:@"link"]) {
     self.parsingString = [NSMutableString new];
-    } else if ([elementName isEqualToString:@"media:content"] && [attributeDict[@"fileSize"] isEqualToString: @"45513966"]) {
+    } else if ([elementName isEqualToString:@"media:content"] && [attributeDict[@"bitrate"] isEqualToString:@"320"]) {
         self.parsingString = [[attributeDict objectForKey:@"url"] mutableCopy];
     }
 }
