@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="ez3-Rc-mFu" id="205-yb-Vxh"/>
                 <outlet property="allVideosLabel" destination="4Wr-dw-b92" id="mwB-Al-aSh"/>
+                <outlet property="explanationLabel" destination="4Wr-dw-b92" id="qRU-g4-rlV"/>
                 <outlet property="tableView" destination="Imk-RU-frI" id="kwg-6b-0Uq"/>
                 <outlet property="videoSearchBar" destination="5uh-mq-xvG" id="2wi-Ni-Hh7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

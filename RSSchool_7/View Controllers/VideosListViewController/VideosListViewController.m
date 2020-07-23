@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UserService *userService;
 @property (copy, nonatomic) NSArray<TedVideo *> *dataSource;
-
+@property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 @property (strong, nonatomic) NSMutableArray<TedVideo *> *videosArray;
 @property (strong, nonatomic) NSMutableArray<TedVideo *> *searchResultArray;
 @property (nonatomic) BOOL isFiltered;
@@ -64,6 +64,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([[self class] isEqual:[FavouriteVideosListViewController class]]) {
+        self.explanationLabel.text = @"Избранные видео";
+    }
+    
     self.userService = [[UserService alloc] initWithParser:[XMLParser new]];
     self.dataSource = [NSArray new];
     self.videoSearchBar.delegate = self;
@@ -71,22 +75,17 @@
 
     self.tableView.rowHeight = 150;
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"CustomCell"];
-//    [self startLoading];
 
     [self configureActivityIndicator];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self.tableView reloadData];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-  
     [self startLoading];
 }
 
@@ -100,7 +99,6 @@
     [self.userService loadImageForURL:video.imageUrl completion:^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.dataSource[indexPath.row].image = image;
-            //            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             [weakSelf.tableView reloadData];
             [self.activityIndicator stopAnimating];
         });
@@ -126,7 +124,6 @@
             }
         }
     }
-
     [cell configureWithItem:video];
     
     return cell;
@@ -144,7 +141,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    TedVideo *video = self.dataSource[indexPath.row];
+    TedVideo *video = self.videosArray[indexPath.row];
     [self.userService cancelDownloadingForUrl:video.imageUrl];
 }
 
@@ -222,7 +219,6 @@
                 [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
                 [weakSelf presentViewController:alertController animated:YES completion:nil];
             } else {
-//                weakSelf.searchResultDataSource = [videos mutableCopy];
                 weakSelf.videosArray = [videos mutableCopy];
                 weakSelf.dataSource = weakSelf.videosArray;
                 [weakSelf.tableView reloadData];
@@ -255,7 +251,6 @@
         tedVideo.downloadLink = video.downloadLink;
         [self.videosArray addObject:tedVideo];
     }
-//    self.dataSource = self.videosArray;
     [self.tableView reloadData];
 }
 

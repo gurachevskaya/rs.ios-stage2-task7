@@ -509,10 +509,10 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "-configureActivityIndicator"
-            landmarkType = "7">
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "AllVideosListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -525,8 +525,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -541,9 +541,9 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "-configureActivityIndicator"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "-startLoading"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -573,8 +573,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-loadImageForIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -589,10 +589,10 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "7">
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "VideosListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -605,8 +605,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -765,8 +765,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-loadImageForIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -781,8 +781,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -797,25 +797,9 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "-viewWillAppear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "629C9B1B-46B5-45B8-A850-762A9654CE2E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-viewDidAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -854,22 +838,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "327F27CD-DDBF-4404-8FE4-A147F4C15E9F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "-configureActivityIndicator"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5A92E0E9-473A-42DA-96D7-7FAD60633081"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -877,8 +845,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-configureActivityIndicator"
             landmarkType = "7">
          </BreakpointContent>
@@ -893,9 +861,9 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "-configureActivityIndicator"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-searchBar:textDidChange:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -909,10 +877,10 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "-configureActivityIndicator"
-            landmarkType = "7">
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "VideosListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -925,8 +893,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -941,9 +909,9 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "-configureActivityIndicator"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-searchBar:textDidChange:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -957,8 +925,8 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-loadImageForIndexPath:"
             landmarkType = "7">
             <Locations>
@@ -1020,122 +988,10 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "-configureActivityIndicator"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "-searchBar:textDidChange:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A86041E0-424D-4A7F-9C3C-77590E5CE724"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A86041E0-424D-4A7F-9C3C-77590E5CE724 - 7bca65f588fa603d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[VideosListViewController tableView:cellForRowAtIndexPath:]"
-                  moduleName = "RSSchool_7"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7/View%20Controllers/VideosListViewController/VideosListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "649">
-               </Location>
-               <Location
-                  uuid = "A86041E0-424D-4A7F-9C3C-77590E5CE724 - 7bca65f588fa603d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[VideosListViewController tableView:cellForRowAtIndexPath:]"
-                  moduleName = "RSSchool_7"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7/View%20Controllers/VideosListViewController/VideosListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "669">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A50ED0D5-1B70-41D2-B57F-17DDEAEC7510"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "36D8470F-2B16-4B12-9C6A-02D742FADF6B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "36D8470F-2B16-4B12-9C6A-02D742FADF6B - 7bca65f588fa603d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[VideosListViewController tableView:cellForRowAtIndexPath:]"
-                  moduleName = "RSSchool_7"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7/View%20Controllers/VideosListViewController/VideosListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "1079">
-               </Location>
-               <Location
-                  uuid = "36D8470F-2B16-4B12-9C6A-02D742FADF6B - ddf231d22503e8b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__60-[VideosListViewController tableView:cellForRowAtIndexPath:]_block_invoke"
-                  moduleName = "RSSchool_7"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7/View%20Controllers/VideosListViewController/VideosListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1148,10 +1004,10 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "-configureActivityIndicator"
-            landmarkType = "7">
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "FavouriteVideosListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1250,26 +1106,10 @@
             filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "-configureActivityIndicator"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "372931D6-2EDF-40CD-9CB9-57D742199BB3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "259"
             endingLineNumber = "259"
-            landmarkName = "-configureActivityIndicator"
-            landmarkType = "7">
+            landmarkName = "FavouriteVideosListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1307,22 +1147,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5C11A004-3263-4977-98C2-106FCB8766AD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSSchool_7Tests/CustomTableViewCellTests.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-testExample"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1A3489B0-20DB-48C2-93BD-0919E18F8E3B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1330,87 +1154,90 @@
             filePath = "RSSchool_7Tests/XMLParserTests.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "-test_didEndElement2"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1A3489B0-20DB-48C2-93BD-0919E18F8E3B - b0a689579b212359"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XMLParserTests test_didEndElement2]"
-                  moduleName = "RSSchool_7Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7Tests/XMLParserTests.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "573">
-               </Location>
-               <Location
-                  uuid = "1A3489B0-20DB-48C2-93BD-0919E18F8E3B - b0a689579b212359"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XMLParserTests test_didEndElement2]"
-                  moduleName = "RSSchool_7Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7Tests/XMLParserTests.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "811">
-               </Location>
-               <Location
-                  uuid = "1A3489B0-20DB-48C2-93BD-0919E18F8E3B - b0a689579b212359"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XMLParserTests test_didEndElement2]"
-                  moduleName = "RSSchool_7Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7Tests/XMLParserTests.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "1493">
-               </Location>
-               <Location
-                  uuid = "1A3489B0-20DB-48C2-93BD-0919E18F8E3B - b0a689579b212359"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XMLParserTests test_didEndElement2]"
-                  moduleName = "RSSchool_7Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7Tests/XMLParserTests.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "1584">
-               </Location>
-               <Location
-                  uuid = "1A3489B0-20DB-48C2-93BD-0919E18F8E3B - b0a689579b212359"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XMLParserTests test_didEndElement2]"
-                  moduleName = "RSSchool_7Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/karina/developer/rs-school/RSSchool_7/RSSchool_7Tests/XMLParserTests.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "1686">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F606AA9C-2DF5-475C-ABFF-3AC5385C4E42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSSchool_7/View Controllers/DetailedInfoViewController/DetailedInfoViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-playButtonTapped:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A04D045-A9A5-4FDB-A402-C29470589769"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-initWithType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DF0110B-4F75-4647-B928-871C877DCB6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B34736FF-7226-4373-9BD0-C0BF3E16E851"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-loadImageForIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DEDA0568-8A40-4E00-84E1-16062AB4BA2B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSSchool_7/View Controllers/VideosListViewController/VideosListViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "-tableView:didEndDisplayingCell:forRowAtIndexPath:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
