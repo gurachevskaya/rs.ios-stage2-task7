@@ -159,10 +159,9 @@
 #pragma mark - UI Setup
 
 - (void)configureActivityIndicator {
+    self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     if (@available(iOS 13.0, *)) {
         self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleLarge;
-    } else {
-        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     }
 }
 

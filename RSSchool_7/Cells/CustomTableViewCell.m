@@ -21,11 +21,6 @@
     self.speakerLabel.text = video.speaker;
     self.speechNameLabel.text = video.title;
     self.videoImageView.image = video.image;
-    
-//    float aspectRatio = video.image.size.height / video.image.size.width;
-//
-//    [self.videoImageView.heightAnchor constraintEqualToAnchor:self.videoImageView.widthAnchor multiplier:aspectRatio].active = YES;
-
 }
 
 @end

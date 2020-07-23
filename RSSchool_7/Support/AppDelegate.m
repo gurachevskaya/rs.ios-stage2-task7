@@ -19,10 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
     [UINavigationBar appearance].tintColor = [UIColor grayColor];
-//    [UITabBar appearance].tintColor = [UIColor grayColor];
-    
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [self rootVC];
+    [self.window makeKeyAndVisible];;
+    return YES;
+}
+
+- (UITabBarController *)rootVC {
     UITabBarController *tabBarController = [UITabBarController new];
     NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
     
@@ -39,10 +43,7 @@
     tabBarController.viewControllers = tabBarControllers;
     tabBarController.customizableViewControllers = nil;
     
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = tabBarController;
-    [self.window makeKeyAndVisible];;
-    return YES;
+    return tabBarController;
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

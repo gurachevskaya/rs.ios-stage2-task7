@@ -12,6 +12,13 @@
 		9A1645DC24C6247E00E21B3C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645DB24C6247E00E21B3C /* DataManager.m */; };
 		9A1645E724C710E600E21B3C /* Video+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645E524C710E600E21B3C /* Video+CoreDataClass.m */; };
 		9A1645E824C710E600E21B3C /* Video+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645E624C710E600E21B3C /* Video+CoreDataProperties.m */; };
+		9A1645EA24C8C9AB00E21B3C /* TedVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645E924C8C9AB00E21B3C /* TedVideoTests.m */; };
+		9A1645EC24C8CA8700E21B3C /* Video+CoreDataPropertiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645EB24C8CA8700E21B3C /* Video+CoreDataPropertiesTests.m */; };
+		9A1645EE24C985C800E21B3C /* CustomTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645ED24C985C700E21B3C /* CustomTableViewCellTests.m */; };
+		9A1645F224C9907500E21B3C /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645EF24C98ED600E21B3C /* AppDelegateTests.m */; };
+		9A1645F424C9931700E21B3C /* DataManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645F324C9931700E21B3C /* DataManagerTests.m */; };
+		9A1645F624C999FB00E21B3C /* DetailedViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645F524C999FB00E21B3C /* DetailedViewControllerTests.m */; };
+		9A1645FC24C9A09E00E21B3C /* XMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1645F724C99EF300E21B3C /* XMLParserTests.m */; };
 		9A4F22E324C317BB0015D244 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F22E224C317BB0015D244 /* AppDelegate.m */; };
 		9A4F22EF24C317BB0015D244 /* RSSchool_7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F22ED24C317BB0015D244 /* RSSchool_7.xcdatamodeld */; };
 		9A4F22F124C317BF0015D244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F22F024C317BF0015D244 /* Assets.xcassets */; };
@@ -48,6 +55,13 @@
 		9A1645E424C710E600E21B3C /* Video+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Video+CoreDataClass.h"; path = "../../Video+CoreDataClass.h"; sourceTree = "<group>"; };
 		9A1645E524C710E600E21B3C /* Video+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Video+CoreDataClass.m"; path = "../../Video+CoreDataClass.m"; sourceTree = "<group>"; };
 		9A1645E624C710E600E21B3C /* Video+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Video+CoreDataProperties.m"; path = "../../Video+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9A1645E924C8C9AB00E21B3C /* TedVideoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TedVideoTests.m; sourceTree = "<group>"; };
+		9A1645EB24C8CA8700E21B3C /* Video+CoreDataPropertiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Video+CoreDataPropertiesTests.m"; sourceTree = "<group>"; };
+		9A1645ED24C985C700E21B3C /* CustomTableViewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellTests.m; sourceTree = "<group>"; };
+		9A1645EF24C98ED600E21B3C /* AppDelegateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTests.m; sourceTree = "<group>"; };
+		9A1645F324C9931700E21B3C /* DataManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManagerTests.m; sourceTree = "<group>"; };
+		9A1645F524C999FB00E21B3C /* DetailedViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailedViewControllerTests.m; sourceTree = "<group>"; };
+		9A1645F724C99EF300E21B3C /* XMLParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLParserTests.m; sourceTree = "<group>"; };
 		9A4F22DE24C317BB0015D244 /* RSSchool_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSchool_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4F22E124C317BB0015D244 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A4F22E224C317BB0015D244 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,7 +151,14 @@
 		9A4F22FF24C317C00015D244 /* RSSchool_7Tests */ = {
 			isa = PBXGroup;
 			children = (
+				9A1645F724C99EF300E21B3C /* XMLParserTests.m */,
+				9A1645EF24C98ED600E21B3C /* AppDelegateTests.m */,
 				9A4F230024C317C00015D244 /* RSSchool_7Tests.m */,
+				9A1645E924C8C9AB00E21B3C /* TedVideoTests.m */,
+				9A1645EB24C8CA8700E21B3C /* Video+CoreDataPropertiesTests.m */,
+				9A1645ED24C985C700E21B3C /* CustomTableViewCellTests.m */,
+				9A1645F324C9931700E21B3C /* DataManagerTests.m */,
+				9A1645F524C999FB00E21B3C /* DetailedViewControllerTests.m */,
 				9A4F230224C317C00015D244 /* Info.plist */,
 			);
 			path = RSSchool_7Tests;
@@ -344,6 +365,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4F230124C317C00015D244 /* RSSchool_7Tests.m in Sources */,
+				9A1645F224C9907500E21B3C /* AppDelegateTests.m in Sources */,
+				9A1645EC24C8CA8700E21B3C /* Video+CoreDataPropertiesTests.m in Sources */,
+				9A1645EE24C985C800E21B3C /* CustomTableViewCellTests.m in Sources */,
+				9A1645FC24C9A09E00E21B3C /* XMLParserTests.m in Sources */,
+				9A1645EA24C8C9AB00E21B3C /* TedVideoTests.m in Sources */,
+				9A1645F624C999FB00E21B3C /* DetailedViewControllerTests.m in Sources */,
+				9A1645F424C9931700E21B3C /* DataManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
