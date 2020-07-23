@@ -11,35 +11,36 @@
 #import "TedVideo.h"
 
 @interface CustomTableViewCellTests : XCTestCase
-
+@property (strong, nonatomic) TedVideo *video;
 @end
 
 @implementation CustomTableViewCellTests
 
 - (void)setUp {
-    
+    self.video = [[TedVideo alloc] init];
+       self.video.downloadLink = @"downloadLink";
+       self.video.duration = @"duration";
+       self.video.image = [UIImage imageNamed:@"Home"];
+       self.video.info = @"info";
+       self.video.link = @"link";
+       self.video.speaker = @"speaker";
+       self.video.title = @"title";
 }
 
 - (void)tearDown {
+    self.video = nil;
 }
 
-- (void)testExample {
-    
-    TedVideo *video = [[TedVideo alloc] init];
-    video.downloadLink = @"";
-    video.duration = @"duration";
-    video.image = [[UIImage alloc] init];;
-    video.info = @"";
-    video.link = @"";
-    video.speaker = @"speaker";
-    video.title = @"";
-    
-    CustomTableViewCell *cell = [[CustomTableViewCell alloc] init];
-    [cell configureWithItem:video];
-//    UINib *nib = [UINib nibWithNibName:@"CustomTableViewCell" bundle:nil];
+- (void)test_ConfigureWithItem {
+    UINib *nib = [UINib nibWithNibName:@"CustomTableViewCell" bundle:nil];
+    CustomTableViewCell *cell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
+    [cell configureWithItem:self.video];
 
     XCTAssertNotNil(cell);
-
+    XCTAssertTrue([cell.durationLabel.text isEqualToString:@"duration"]);
+    XCTAssertTrue([cell.speakerLabel.text isEqualToString:@"speaker"]);
+    XCTAssertTrue([cell.speechNameLabel.text isEqualToString:@"title"]);
+    XCTAssertTrue([cell.videoImageView.image isEqual:[UIImage imageNamed:@"Home"]]);
 }
 
 

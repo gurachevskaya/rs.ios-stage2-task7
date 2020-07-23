@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "XMLParser.h"
 
-@interface XMLParser (Testing)
+@interface XMLParser (Testing) <NSXMLParserDelegate>
 - (void)resetParserState;
 - (void)parserDidStartDocument:(NSXMLParser *)parser;
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError;
@@ -17,6 +17,7 @@
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string;
 - (void)parserDidEndDocument:(NSXMLParser *)parser;
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parseVideos:(NSData *)data completion:(void (^)(NSArray<TedVideo *> *, NSError *))completion;
 
 @property (nonatomic, strong) NSMutableDictionary *videoDictionary;
 @property (nonatomic, strong) NSMutableString *parsingString;
@@ -167,6 +168,12 @@
     
     XCTAssertNil(self.parser.parsingString);
     XCTAssertTrue([self.parser.videoDictionary isEqual:@{@"itunes:duration" : @"12.50"}]);
+}
+
+- (void)test_parseVideos {
+    
+    [self.parser parseVideos:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://translate.google.com/"]] completion:self.parser.completion];
+    XCTAssertNil(self.parser.completion);
 }
 
 @end
