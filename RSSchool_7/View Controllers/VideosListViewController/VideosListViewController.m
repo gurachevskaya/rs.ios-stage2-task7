@@ -41,6 +41,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"CustomCell"];
 
     [self configureActivityIndicator];
+    [self startLoading];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,7 +52,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    [self startLoading];
 }
 
 - (void)loadImageForIndexPath:(NSIndexPath *)indexPath {

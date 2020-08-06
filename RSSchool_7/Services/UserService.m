@@ -70,6 +70,7 @@
     if (!operations) { return; }
     for (NSOperation *operation in operations) {
         [operation cancel];
+        [self.operations removeObjectForKey:url];
     }
 }
 
