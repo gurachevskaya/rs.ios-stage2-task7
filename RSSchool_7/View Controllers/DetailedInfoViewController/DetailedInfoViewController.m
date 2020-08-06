@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 
 @property (nonatomic) BOOL isFavourite;
 @property (strong, nonatomic) TedVideo *video;
@@ -57,9 +58,11 @@
     self.videoNameLabel.text = self.video.title;
     self.informationLabel.text = self.video.info;
     self.videoImageView.image = self.video.image;
-
+    if (self.videoImageView.image){
+    [self.playButton setHidden:NO];
     float aspectRatio = self.videoImageView.image.size.height/self.videoImageView.image.size.width;
     [self.videoImageView.heightAnchor constraintEqualToAnchor:self.videoImageView.widthAnchor multiplier:aspectRatio].active = YES;
+    }
     
     self.isFavourite = NO;
 

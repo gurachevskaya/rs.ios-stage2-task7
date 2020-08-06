@@ -14,6 +14,7 @@
                 <outlet property="heartButton" destination="fhv-Qq-GHh" id="Hz0-P4-7sM"/>
                 <outlet property="infoLabel" destination="zVB-iM-5pS" id="9qv-t9-WWI"/>
                 <outlet property="informationLabel" destination="Kat-Ne-SLU" id="4IV-ET-9tF"/>
+                <outlet property="playButton" destination="mtU-mg-4zL" id="fgy-Vh-saj"/>
                 <outlet property="speakerLabel" destination="de1-nW-JHa" id="HeF-4R-dfW"/>
                 <outlet property="videoImageView" destination="jpq-tj-rvf" id="bxI-wI-ppm"/>
                 <outlet property="videoNameLabel" destination="RBm-Qt-pM9" id="Jsc-n9-dRX"/>
@@ -87,7 +88,7 @@
                                         <action selector="heartTapped:" destination="-1" eventType="touchUpInside" id="7Y9-dD-mzl"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" alpha="0.65000000000000002" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtU-mg-4zL">
+                                <button hidden="YES" opaque="NO" alpha="0.65000000000000002" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtU-mg-4zL">
                                     <rect key="frame" x="157" y="100" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="23C-Z5-54Y"/>
