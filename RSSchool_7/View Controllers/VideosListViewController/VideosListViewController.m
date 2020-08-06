@@ -7,66 +7,30 @@
 //
 
 #import "VideosListViewController.h"
-#import "CustomTableViewCell.h"
-#import "UserService.h"
-#import "XMLParser.h"
-#import <CoreData/CoreData.h>
-#import "DetailedInfoViewController.h"
-#import "DataManager.h"
-#import "Video+CoreDataProperties.h"
+
 
 @interface VideosListViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UISearchBar *videoSearchBar;
-@property (strong, nonatomic) IBOutlet UILabel *allVideosLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) UserService *userService;
-@property (copy, nonatomic) NSArray<TedVideo *> *dataSource;
-@property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
-@property (strong, nonatomic) NSMutableArray<TedVideo *> *videosArray;
-@property (strong, nonatomic) NSMutableArray<TedVideo *> *searchResultArray;
-@property (nonatomic) BOOL isFiltered;
-@property (copy, nonatomic) NSString *searchText;
-
-@property (nonatomic) ViewControllerType type;
-
 @end
 
-@interface AllVideosListViewController : VideosListViewController 
-
-@end
-
-@interface FavouriteVideosListViewController : VideosListViewController
-
-@property (nonatomic, strong) DataManager *dataManager;
-
-@end
 
 @implementation VideosListViewController
 
-//Ensuring below that the startLoading and cellForRowAtIndexPath method must be implemented by the private subclasses
+//Ensuring below that the startLoading and configureVideosLabel method must be implemented by the private subclasses
 - (void)startLoading {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You have not implemented %@ in %@", NSStringFromSelector(_cmd), NSStringFromClass([self class])];
 }
 
-- (instancetype)initWithType:(ViewControllerType)type {
-    self = nil;
-    if (type == AllVideos) {
-        self = [[AllVideosListViewController alloc] initWithNibName:@"VideosViewController" bundle:nil];
-    } else if (type == FavouriteVideos) {
-        self = [[FavouriteVideosListViewController alloc] initWithNibName:@"VideosViewController" bundle:nil];
-    }
-    return self;
+- (void)configureVideosLabel {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You have not implemented %@ in %@", NSStringFromSelector(_cmd), NSStringFromClass([self class])];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([[self class] isEqual:[FavouriteVideosListViewController class]]) {
-        self.explanationLabel.text = @"Избранные видео";
-    }
+    [self configureVideosLabel];
     
     self.userService = [[UserService alloc] initWithParser:[XMLParser new]];
     self.dataSource = [NSArray new];
@@ -204,62 +168,3 @@
 
 @end
 
-
-@implementation AllVideosListViewController 
-
-- (void)startLoading {
-    __weak typeof(self) weakSelf = self;
-    [self.activityIndicator startAnimating];
-    [self.userService loadVideos:^(NSArray<TedVideo *> *videos, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error) {
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                                         message:[NSString stringWithFormat:@"%@", error]
-                                                                                  preferredStyle:UIAlertControllerStyleAlert];
-                [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
-                [weakSelf presentViewController:alertController animated:YES completion:nil];
-            } else {
-                weakSelf.videosArray = [videos mutableCopy];
-                weakSelf.dataSource = weakSelf.videosArray;
-                [weakSelf.tableView reloadData];
-            }
-            [weakSelf.activityIndicator stopAnimating];
-        });
-    }];
-}
-
-@end
-
-
-@implementation FavouriteVideosListViewController
-
-- (void)startLoading {
-    
-    self.dataManager = [DataManager sharedManager];
-    NSManagedObjectContext *context = [self.dataManager newBackgroundContext];
-    
-    self.videosArray = [NSMutableArray array];
-    NSArray *array = [context executeFetchRequest:[Video fetchRequest] error:nil];
-    for (Video *video in array) {
-        TedVideo *tedVideo = [TedVideo new];
-        tedVideo.duration = video.duration;
-        tedVideo.imageUrl = video.imageUrl;
-        tedVideo.info = video.info;
-        tedVideo.speaker = video.speaker;
-        tedVideo.title = video.title;
-        tedVideo.link = video.link;
-        tedVideo.downloadLink = video.downloadLink;
-        [self.videosArray addObject:tedVideo];
-    }
-    [self.tableView reloadData];
-}
-
-#pragma mark - Table View delegate
-
-- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    TedVideo *video = self.dataSource[indexPath.row];
-    [self.userService cancelDownloadingForUrl:video.imageUrl];
-}
-
-
-@end

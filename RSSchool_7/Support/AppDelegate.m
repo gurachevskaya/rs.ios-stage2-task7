@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "VideosListViewController.h"
 #import "DataManager.h"
+#import "ControllersFactory.h"
 
 @interface AppDelegate ()
 
@@ -30,12 +31,13 @@
     UITabBarController *tabBarController = [UITabBarController new];
     NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
     
-    VideosListViewController *startVC = [[VideosListViewController alloc] initWithType:AllVideos];
+    VideosListViewController *startVC = [ControllersFactory createViewControllerWithType:AllVideos];
     UINavigationController *firstViewController = [[UINavigationController alloc] initWithRootViewController:startVC];
     firstViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Home"] tag:0];
     [tabBarControllers addObject:firstViewController];
     
-    VideosListViewController *favouritesVC = [[VideosListViewController alloc] initWithType:FavouriteVideos];
+
+     VideosListViewController *favouritesVC = [ControllersFactory createViewControllerWithType:FavouriteVideos];
     UINavigationController *secondViewController = [[UINavigationController alloc] initWithRootViewController:favouritesVC];
     secondViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"Star"] tag:0];
     [tabBarControllers addObject:secondViewController];
