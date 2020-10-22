@@ -34,7 +34,7 @@
 		9A4F232824C351180015D244 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232624C351180015D244 /* VideosListViewController.m */; };
 		9A4F232924C351180015D244 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F232724C351180015D244 /* VideosViewController.xib */; };
 		9A4F232C24C44E460015D244 /* TedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232B24C44E460015D244 /* TedVideo.m */; };
-		9A4F232F24C450750015D244 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232E24C450750015D244 /* UserService.m */; };
+		9A4F232F24C450750015D244 /* VideoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F232E24C450750015D244 /* VideoService.m */; };
 		9A4F233324C46A020015D244 /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F233224C46A020015D244 /* ImageDownloadOperation.m */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +92,8 @@
 		9A4F232724C351180015D244 /* VideosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosViewController.xib; sourceTree = "<group>"; };
 		9A4F232A24C44E460015D244 /* TedVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedVideo.h; sourceTree = "<group>"; };
 		9A4F232B24C44E460015D244 /* TedVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TedVideo.m; sourceTree = "<group>"; };
-		9A4F232D24C450750015D244 /* UserService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
-		9A4F232E24C450750015D244 /* UserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
+		9A4F232D24C450750015D244 /* VideoService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoService.h; sourceTree = "<group>"; };
+		9A4F232E24C450750015D244 /* VideoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoService.m; sourceTree = "<group>"; };
 		9A4F233124C46A020015D244 /* ImageDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadOperation.h; sourceTree = "<group>"; };
 		9A4F233224C46A020015D244 /* ImageDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,8 +255,8 @@
 		9A4F233024C4507B0015D244 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9A4F232D24C450750015D244 /* UserService.h */,
-				9A4F232E24C450750015D244 /* UserService.m */,
+				9A4F232D24C450750015D244 /* VideoService.h */,
+				9A4F232E24C450750015D244 /* VideoService.m */,
 				9A4F233124C46A020015D244 /* ImageDownloadOperation.h */,
 				9A4F233224C46A020015D244 /* ImageDownloadOperation.m */,
 				9A1645DA24C6247E00E21B3C /* DataManager.h */,
@@ -377,7 +377,7 @@
 				9A0B3CD524DC67C1006B3667 /* ControllersFactory.m in Sources */,
 				9A3F490624DC72DE00A94BFB /* FavouriteVideosListViewController.m in Sources */,
 				9A1645DC24C6247E00E21B3C /* DataManager.m in Sources */,
-				9A4F232F24C450750015D244 /* UserService.m in Sources */,
+				9A4F232F24C450750015D244 /* VideoService.m in Sources */,
 				9A4F22EF24C317BB0015D244 /* RSSchool_7.xcdatamodeld in Sources */,
 				9A1645E724C710E600E21B3C /* Video+CoreDataClass.m in Sources */,
 				9A4F232824C351180015D244 /* VideosListViewController.m in Sources */,

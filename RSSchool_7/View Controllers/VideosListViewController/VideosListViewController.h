@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomTableViewCell.h"
-#import "UserService.h"
+#import "VideoService.h"
 #import "XMLParser.h"
 #import <CoreData/CoreData.h>
 #import "DetailedInfoViewController.h"
@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, ViewControllerType) {
 @property (weak, nonatomic) IBOutlet UISearchBar *videoSearchBar;
 @property (strong, nonatomic) IBOutlet UILabel *allVideosLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) UserService *userService;
+@property (strong, nonatomic) VideoService *videoService;
 @property (copy, nonatomic) NSArray<TedVideo *> *dataSource;
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 @property (strong, nonatomic) NSMutableArray<TedVideo *> *videosArray;
@@ -43,7 +43,6 @@ typedef NS_ENUM(NSInteger, ViewControllerType) {
 @property (nonatomic) BOOL isFiltered;
 @property (copy, nonatomic) NSString *searchText;
 
-@property (nonatomic) ViewControllerType type;
 
 @end
 

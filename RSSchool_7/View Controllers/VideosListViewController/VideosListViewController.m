@@ -32,7 +32,7 @@
     
     [self configureVideosLabel];
     
-    self.userService = [[UserService alloc] initWithParser:[XMLParser new]];
+    self.videoService = [[VideoService alloc] initWithParser:[XMLParser new]];
     self.dataSource = [NSArray new];
     self.videoSearchBar.delegate = self;
     self.isFiltered = NO;
@@ -61,7 +61,7 @@
     TedVideo *video = [TedVideo new];
  
     video = self.dataSource[indexPath.row];
-    [self.userService loadImageForURL:video.imageUrl completion:^(UIImage *image) {
+    [self.videoService loadImageForURL:video.imageUrl completion:^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.dataSource[indexPath.row].image = image;
             [weakSelf.tableView reloadData];
@@ -81,7 +81,7 @@
     } else if (!video.image && self.isFiltered) {
         for (TedVideo *tedVideo in self.videosArray) {
             if ([video.imageUrl isEqualToString:tedVideo.imageUrl]) {
-                [self.userService loadImageForURL:tedVideo.imageUrl completion:^(UIImage *image) {
+                [self.videoService loadImageForURL:tedVideo.imageUrl completion:^(UIImage *image) {
                       dispatch_async(dispatch_get_main_queue(), ^{
                              video.image = image;
                       });
@@ -107,7 +107,7 @@
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     TedVideo *video = self.videosArray[indexPath.row];
-    [self.userService cancelDownloadingForUrl:video.imageUrl];
+    [self.videoService cancelDownloadingForUrl:video.imageUrl];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

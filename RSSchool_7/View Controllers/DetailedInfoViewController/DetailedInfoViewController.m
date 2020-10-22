@@ -47,11 +47,9 @@
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:NO];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back"]
-                                                                   style:UIBarButtonItemStylePlain
-                                                                  target:self.navigationController
-                                                                  action:@selector(popViewControllerAnimated:)];
-    self.navigationItem.leftBarButtonItem = backButton;
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+
+    self.navigationItem.backBarButtonItem = backButton;
         
     self.durationLabel.text = self.video.duration;
     self.speakerLabel.text = self.video.speaker;

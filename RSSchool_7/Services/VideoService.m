@@ -1,16 +1,16 @@
 //
-//  UserService.m
+//  VideoService.m
 //  RSSchool_7
 //
 //  Created by Karina on 7/19/20.
 //  Copyright © 2020 Karina. All rights reserved.
 //
 
-#import "UserService.h"
+#import "VideoService.h"
 #import "XMLParser.h"
 #import "ImageDownloadOperation.h"
 
-@interface UserService ()
+@interface VideoService ()
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) id parser;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation UserService
+@implementation VideoService
 
 - (instancetype)initWithParser:(id)parser {
     self = [super init];

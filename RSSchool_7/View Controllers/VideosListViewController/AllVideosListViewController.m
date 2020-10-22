@@ -21,7 +21,7 @@
 - (void)startLoading {
     __weak typeof(self) weakSelf = self;
     [self.activityIndicator startAnimating];
-    [self.userService loadVideos:^(NSArray<TedVideo *> *videos, NSError *error) {
+    [self.videoService loadVideos:^(NSArray<TedVideo *> *videos, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error"

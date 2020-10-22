@@ -1,5 +1,5 @@
 //
-//  UserService.h
+//  VideoService.h
 //  RSSchool_7
 //
 //  Created by Karina on 7/19/20.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UserService : NSObject
+@interface VideoService : NSObject
 
 - (instancetype)initWithParser:(id)parser;
 
