@@ -2,7 +2,7 @@
 //  Video+CoreDataClass.h
 //  RSSchool_7
 //
-//  Created by Karina on 7/21/20.
+//  Created by Karina on 10/22/20.
 //  Copyright © 2020 Karina. All rights reserved.
 //
 //

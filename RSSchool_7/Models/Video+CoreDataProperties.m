@@ -2,7 +2,7 @@
 //  Video+CoreDataProperties.m
 //  RSSchool_7
 //
-//  Created by Karina on 7/21/20.
+//  Created by Karina on 10/22/20.
 //  Copyright © 2020 Karina. All rights reserved.
 //
 //
@@ -17,12 +17,12 @@
     return request;
 }
 
+@dynamic downloadLink;
 @dynamic duration;
 @dynamic imageUrl;
 @dynamic info;
+@dynamic link;
 @dynamic speaker;
 @dynamic title;
-@dynamic link;
-@dynamic downloadLink;
 
 @end
