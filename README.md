@@ -1,5 +1,5 @@
 # rs.ios-stage2-task7
-Application, which could play and save favourite TED Talks videos.
+Application, which can play and save favourite TED Talks videos.
 
 
 <img src="https://github.com/gurachevskaya/rs.ios-stage2-task7/blob/main/RSSchool_7/Images/Снимок%20экрана%202020-10-23%20в%2017.04.31.png?raw=true" width="200"><img src="https://github.com/gurachevskaya/rs.ios-stage2-task7/blob/main/RSSchool_7/Images/Снимок%20экрана%202020-10-23%20в%2017.04.55.png?raw=true" width="200">
