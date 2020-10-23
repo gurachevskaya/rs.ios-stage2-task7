@@ -36,6 +36,8 @@
 		9A4F233324C46A020015D244 /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F233224C46A020015D244 /* ImageDownloadOperation.m */; };
 		9A92E4772541ED7300E39D1B /* Video+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E4752541ED7300E39D1B /* Video+CoreDataClass.m */; };
 		9A92E4782541ED7300E39D1B /* Video+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E4762541ED7300E39D1B /* Video+CoreDataProperties.m */; };
+		9A92E47D25431AE600E39D1B /* Снимок экрана 2020-10-23 в 17.04.31.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A92E47B25431AE500E39D1B /* Снимок экрана 2020-10-23 в 17.04.31.png */; };
+		9A92E47E25431AE600E39D1B /* Снимок экрана 2020-10-23 в 17.04.55.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A92E47C25431AE600E39D1B /* Снимок экрана 2020-10-23 в 17.04.55.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		9A92E4742541ED7300E39D1B /* Video+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Video+CoreDataClass.h"; sourceTree = "<group>"; };
 		9A92E4752541ED7300E39D1B /* Video+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Video+CoreDataClass.m"; sourceTree = "<group>"; };
 		9A92E4762541ED7300E39D1B /* Video+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Video+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9A92E47B25431AE500E39D1B /* Снимок экрана 2020-10-23 в 17.04.31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2020-10-23 в 17.04.31.png"; sourceTree = "<group>"; };
+		9A92E47C25431AE600E39D1B /* Снимок экрана 2020-10-23 в 17.04.55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2020-10-23 в 17.04.55.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 				9A4F230E24C32D190015D244 /* Parsers */,
 				9A4F231024C32DDE0015D244 /* Models */,
 				9A4F233024C4507B0015D244 /* Services */,
+				9A92E47A25431ABF00E39D1B /* Images */,
 			);
 			path = RSSchool_7;
 			sourceTree = "<group>";
@@ -265,6 +270,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		9A92E47A25431ABF00E39D1B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9A92E47B25431AE500E39D1B /* Снимок экрана 2020-10-23 в 17.04.31.png */,
+				9A92E47C25431AE600E39D1B /* Снимок экрана 2020-10-23 в 17.04.55.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,9 +359,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A92E47D25431AE600E39D1B /* Снимок экрана 2020-10-23 в 17.04.31.png in Resources */,
 				9A4F22F424C317BF0015D244 /* LaunchScreen.storyboard in Resources */,
 				9A4F22F124C317BF0015D244 /* Assets.xcassets in Resources */,
 				9A4F232324C349440015D244 /* CustomTableViewCell.xib in Resources */,
+				9A92E47E25431AE600E39D1B /* Снимок экрана 2020-10-23 в 17.04.55.png in Resources */,
 				9A1645D824C5BB8B00E21B3C /* DetailedInfoViewController.xib in Resources */,
 				9A4F232924C351180015D244 /* VideosViewController.xib in Resources */,
 			);
